@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WVAS OJT Attendance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo"><img src="assets/wvas-logo.jpg" alt="WVAS Logo"></div>
+        <div>
+          <h1>WEDNESDAY</h1>
+          <span>VIRTUAL ASSISTANCE SERVICES</span>
+        </div>
+      </div>
+      <div class="tag">OJT ATTENDANCE</div>
+    </header>
+
+    <section id="loginScreen" class="screen">
+      <div class="hero-card">
+        <p class="eyebrow"></p>
+        <h2>Daily Time <span>Tracker</span></h2>
+        <p class="muted">
+          Automatic time-in, time-out, attendance status, and OJT hour tracking
+          for the WVAS interns.
+        </p>
+
+        <div class="form">
+          <label for="name">Name</label>
+          <select id="name">
+            <option value="">Loading...</option>
+          </select>
+
+          <label for="pin">PIN</label>
+          <input id="pin" type="password" placeholder="Enter your PIN" maxlength="8">
+
+          <button id="loginBtn" class="primary">Continue</button>
+          <button id="supervisorBtn" class="link-btn">Supervisor View</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="internScreen" class="screen hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">WELCOME</p>
+          <h2 id="welcome"></h2>
+          <p id="dateLabel" class="muted"></p>
+        </div>
+        <button id="logoutBtn" class="secondary">Log out</button>
+      </div>
+
+      <div class="stats">
+        <article><small>Total OJT Hours</small><strong id="totalHours">0.00</strong><span>/ 600 hours</span></article>
+        <article><small>Days Completed</small><strong id="days">0</strong><span>attendance days</span></article>
+        <article><small>Remaining Hours</small><strong id="remaining">600.00</strong><span>to complete</span></article>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">TODAY</p>
+            <h3>Daily Attendance</h3>
+          </div>
+          <span id="status" class="pill">Not Logged In</span>
+        </div>
+
+        <div class="time-grid">
+          <div><small>Time In</small><strong id="timeIn">—</strong></div>
+          <div><small>Time Out</small><strong id="timeOut">—</strong></div>
+          <div><small>Credited Hours</small><strong id="todayHours">0.00</strong></div>
+        </div>
+
+        <div class="actions">
+          <button id="timeInBtn" class="time-btn in">✓ TIME IN</button>
+          <button id="timeOutBtn" class="time-btn out">↗ TIME OUT</button>
+        </div>
+
+        <p class="small-note">
+          Schedule: Monday–Saturday, 10:00 AM–6:00 PM.
+          Lunch: 12:00–1:00 PM. Health/Eye Break: 5:00–5:30 PM.
+        </p>
+      </div>
+    </section>
+
+    <section id="supervisorScreen" class="screen hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">SUPERVISOR DASHBOARD</p>
+          <h2>OJT Attendance Overview</h2>
+          <p id="adminDate" class="muted"></p>
+        </div>
+        <button id="adminLogoutBtn" class="secondary">Log out</button>
+      </div>
+
+      <div class="stats">
+        <article><small>Total Team Hours</small><strong id="teamHours">0.00</strong><span>credited hours</span></article>
+        <article><small>Logged In Today</small><strong id="teamPresent">0/0</strong><span>interns</span></article>
+        <article><small>Required Hours</small><strong>600</strong><span>per intern</span></article>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">LIVE OVERVIEW</p>
+            <h3>Today's Attendance</h3>
+          </div>
+          <button id="refreshBtn" class="secondary">Refresh</button>
+        </div>
+
+        <div class="table-wrap" id="teamTable"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">FINAL REPORT</p>
+            <h3>Accomplishment Time Report</h3>
+          </div>
+          <button id="exportBtn" class="secondary">Export All</button>
+        </div>
+
+        <div class="report-tools">
+          <label for="reportIntern">Individual Intern Report</label>
+          <div class="report-row">
+            <select id="reportIntern">
+              <option value="">Select an intern</option>
+            </select>
+            <button id="individualReportBtn" class="secondary">Generate Report</button>
+          </div>
+        </div>
+
+        <p class="small-note">
+          Individual reports are supervisor-only. Use this when an intern requests a detailed attendance record.
+        </p>
+      </div>
+    </section>
+
+    <footer>WVAS • OJT Attendance & Hours System</footer>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
