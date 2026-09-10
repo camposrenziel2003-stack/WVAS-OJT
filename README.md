@@ -1,19 +1,53 @@
-# WVAS OJT Attendance System — OT Only Update
+# WVAS OJT Attendance System
 
-This version keeps the existing frontend layout and design unchanged and adds only the overtime backend logic.
+A web-based attendance and OJT hour management system developed to streamline intern time tracking, attendance monitoring, hour computation, and report generation.
 
-## Overtime rules
-- Regular schedule: Monday–Saturday, 10:00 AM–6:00 PM.
-- Lunch and listed breaks remain included in the scheduled 8 hours.
-- Regular credited hours are capped at 8 hours.
-- Overtime starts after 6:00 PM.
-- Maximum overtime credited per day: 1 hour.
-- The `Overtime` value is stored separately in the Attendance sheet.
-- Credited Hours = regular credited hours + credited overtime.
-- If an intern clocks out after 7:00 PM, the `Overtime` field still caps at 1.00 hour. The actual Time Out remains the real server timestamp.
+## Features
 
-## Files
-- `Code.gs` — updated backend
-- `index.html`, `styles.css`, `app.js` — unchanged frontend files
-- `netlify.toml` — unchanged
-- `assets/wvas-logo.jpg` — existing logo asset
+- Intern authentication using name selection and PIN
+- Daily time-in and time-out tracking
+- Attendance status monitoring
+- Daily credited hours calculation
+- Total and remaining OJT hour tracking
+- Supervisor dashboard
+- Team attendance overview
+- Individual intern attendance reports
+- Consolidated attendance report export
+- CSV report generation
+- Backend API integration
+- Overtime tracking
+
+## System Overview
+
+The system provides two main views:
+
+### Intern View
+
+Interns can log in using their assigned name and PIN, record their time-in and time-out, and monitor their attendance progress and OJT hours.
+
+### Supervisor View
+
+Supervisors can monitor team attendance, view individual attendance records, track total credited hours, and generate attendance reports.
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Google Apps Script
+- Google Sheets
+- Netlify
+- API Integration
+
+## Project Structure
+
+```text
+WVAS-OJT/
+├── assets/
+│   └── wvas-logo.jpg
+├── app.js
+├── index.html
+├── styles.css
+├── netlify.toml
+├── README.md
+└── .gitignore
