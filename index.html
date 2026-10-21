@@ -111,80 +111,64 @@
           <button id="refreshBtn" class="secondary">Refresh</button>
         </div>
 
-        <div class="table-toolbar" aria-label="Attendance table controls">
-          <div class="table-control search-control">
-            <label for="internSearch">Search intern</label>
-            <input id="internSearch" type="search" placeholder="Type an intern's name…" autocomplete="off">
-          </div>
-          <div class="table-control filter-control">
-            <label for="statusFilter">Filter by status</label>
-            <select id="statusFilter">
-              <option value="all">All statuses</option>
-            </select>
-          </div>
-          <span id="lastUpdated" class="last-updated" aria-live="polite">Not refreshed yet</span>
-        </div>
-
-        <div class="table-wrap" id="teamTable" aria-live="polite" aria-busy="false"></div>
+        <div class="table-wrap" id="teamTable"></div>
       </div>
 
-      <div class="card weekly-report-card">
+      <div class="card">
         <div class="card-head">
           <div>
-            <p class="eyebrow">WEEKLY REPORT</p>
-            <h3>Weekly DTR Generator</h3>
+            <p class="eyebrow">FINAL REPORT</p>
+            <h3>Accomplishment Time Report</h3>
           </div>
           <button id="exportBtn" class="secondary">Export All</button>
         </div>
 
-        <div class="weekly-report-controls">
-          <div class="report-control intern-control">
-            <label for="reportIntern">Select Intern</label>
+        <div class="report-tools">
+          <label for="reportIntern">Individual Intern Report</label>
+          <div class="report-row">
             <select id="reportIntern">
               <option value="">Select an intern</option>
             </select>
+            <button id="individualReportBtn" class="secondary">Generate Report</button>
           </div>
-          <div class="report-control">
-            <label for="reportStartDate">From</label>
-            <input id="reportStartDate" type="date" required>
-          </div>
-          <div class="report-control">
-            <label for="reportEndDate">To</label>
-            <input id="reportEndDate" type="date" required>
-          </div>
-          <button id="previewReportBtn" class="primary preview-report-button">Preview DTR</button>
         </div>
 
-        <div class="filename-row" aria-live="polite">
-          <span class="filename-label">Automatic filename</span>
-          <strong id="reportFilename">W6_LastName</strong>
-          <span class="filename-extensions">.jpg · .xlsx</span>
-        </div>
-
-        <p class="small-note weekly-note">
-          Choose an intern and a date range, then preview the records before downloading. Week numbering uses W6 for October 12–17, 2026 as the reference.
-        </p>
-
-        <div class="weekly-preview-section">
-          <div class="weekly-preview-heading">
+        <div class="weekly-dtr-tools">
+          <p class="eyebrow">WEEKLY SUMMARY</p>
+          <h4>Weekly DTR Preview & Download</h4>
+          <div class="weekly-dtr-controls">
             <div>
-              <p class="eyebrow">PREVIEW</p>
-              <h4 id="weeklyPreviewTitle">Your DTR will appear here</h4>
+              <label for="reportStartDate">From</label>
+              <input id="reportStartDate" type="date" required>
             </div>
-            <span id="weeklyPreviewMeta" class="preview-meta">No report generated yet</span>
-          </div>
-
-          <div id="weeklyPreview" class="weekly-preview-wrap" aria-live="polite" aria-busy="false">
-            <div class="preview-placeholder">
-              Select an intern and date range, then click <strong>Preview DTR</strong>.
+            <div>
+              <label for="reportEndDate">To</label>
+              <input id="reportEndDate" type="date" required>
             </div>
+            <button id="previewReportBtn" class="primary">Preview DTR</button>
           </div>
-
-          <div class="weekly-download-actions">
+          <div class="weekly-dtr-filename">
+            <span>Automatic filename</span>
+            <strong id="reportFilename">W#_LastName</strong>
+            <span>.jpg · .xlsx</span>
+          </div>
+          <div class="weekly-dtr-preview-head">
+            <h4 id="weeklyPreviewTitle">Your DTR preview will appear here</h4>
+            <span id="weeklyPreviewMeta">No report generated yet</span>
+          </div>
+          <div id="weeklyPreview" class="weekly-dtr-preview" aria-live="polite" aria-busy="false">
+            <div class="weekly-dtr-placeholder">Select an intern and date range, then click <strong>Preview DTR</strong>.</div>
+          </div>
+          <div class="weekly-dtr-downloads">
             <button id="downloadJpgBtn" class="secondary" disabled>Download JPG</button>
             <button id="downloadExcelBtn" class="secondary" disabled>Download Excel (.xlsx)</button>
           </div>
+          <p class="small-note">The filename uses the selected intern’s last name. Week # is anchored to to the Week that the supervisor wants to see and export. The preview/export only reads existing attendance records.</p>
         </div>
+
+        <p class="small-note">
+          The existing Individual Intern Report and Export All options remain available above.
+        </p>
       </div>
     </section>
 

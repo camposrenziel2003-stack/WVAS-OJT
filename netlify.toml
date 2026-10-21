@@ -1,2 +1,8 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/api/attendance"
+  to = "https://script.google.com/macros/s/AKfycby2rBZx_Dmibj_Qo8zIcCTP2XPkgF43CX93iajwcBDxB7KzUcx1vu_EtogRndi9_kNdiQ/exec"
+  status = 200
+  force = true
