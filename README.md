@@ -8,7 +8,7 @@ This package updates the Supervisor View with a weekly DTR generator and keeps t
 - Select an intern and choose a start and end date.
 - Preview the selected intern's records in a spreadsheet-style table before download.
 - Download the preview as a JPG image or a real `.xlsx` Excel workbook.
-- The filename is automatic, for example `W6_Baldorado.jpg` and `W6_Baldorado.xlsx`.
+- The filename is automatic, for example `W6_Surname.jpg` and `W6_Surname.xlsx`.
 - The export columns match the supplied DTR samples: Date, Time In, Time Out, Actual Hours, Credited Hours, Status, Remarks, Last Updated, and Overtime.
 - The weekly report API validates the supervisor PIN, reads from the master `Attendance` sheet, filters the selected intern and date range, and does not edit attendance records.
 - Keeps the previous Supervisor View search/status filter, 600-hour progress view, last-refreshed indicator, and Export All feature.
