@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WVAS OJT Attendance — Weekly DTR Generator
 
 This package updates the Supervisor View with a weekly DTR generator and keeps the existing intern login and time-in/time-out flow.
@@ -38,3 +39,80 @@ The existing frontend uses `API_URL = "/api/attendance"`; keep your existing Net
 - The uploaded `Code.gs` contains an admin PIN and intern PINs. Keep the Apps Script source private and do not publish those values in a public repository.
 - The weekly report uses the date values in the master `Attendance` sheet and includes only records that exist for the selected intern/date range. It does not synthesize absent/no-record days.
 - `Actual Hours` is exported as a numeric value, `Credited Hours` and `Overtime` remain numeric, and the JPG preview formats the same columns for easy reading.
+=======
+# WVAS OJT Attendance System
+
+A web-based attendance and OJT hour management system developed to streamline intern time tracking, attendance monitoring, hour computation, and attendance report generation.
+
+## Features
+
+- Intern authentication using name selection and PIN
+- Daily time-in and time-out tracking
+- Attendance status monitoring
+- Daily credited hours calculation
+- Total and remaining OJT hour tracking
+- Supervisor dashboard
+- Team attendance overview
+- Individual intern attendance reports
+- Consolidated attendance report export
+- CSV report generation
+- API integration
+- Overtime tracking
+
+## System Overview
+
+The system provides two main views:
+
+### Intern View
+
+Interns can log in using their assigned name and PIN, record their daily time-in and time-out, and monitor their attendance progress and completed OJT hours.
+
+### Supervisor View
+
+Supervisors can monitor team attendance, view individual attendance records, track total credited hours, and generate attendance reports.
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Google Apps Script
+- Google Sheets
+- Netlify
+- API Integration
+
+## Key Functionalities
+
+### Attendance Tracking
+
+The system allows interns to record their daily time-in and time-out while displaying their attendance status and credited hours.
+
+### OJT Hour Monitoring
+
+Interns can view their total completed hours, attendance days, and remaining hours required to complete their OJT.
+
+### Supervisor Dashboard
+
+The supervisor dashboard provides an overview of team attendance, including time-in, time-out, daily hours, total hours, remaining hours, and attendance status.
+
+### Reporting
+
+The system supports consolidated and individual attendance reports and allows reports to be exported as CSV files.
+
+### Overtime Tracking
+
+The system includes overtime handling in the attendance calculation, with overtime tracked separately from regular credited hours.
+
+## Project Structure
+
+```text
+WVAS-OJT/
+├── assets/
+│   └── wvas-logo.jpg
+├── app.js
+├── index.html
+├── styles.css
+├── netlify.toml
+├── README.md
+└── .gitignore
+>>>>>>> d9f8ed55c23f37901afc55f549c8bf62f63f1947
